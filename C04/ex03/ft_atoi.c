@@ -1,33 +1,40 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlcpy.c                                       :+:      :+:    :+:   */
+/*   ft_atoi.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: sametyilmaz <sametyilmaz@student.42.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/09/05 18:39:33 by sametyilmaz       #+#    #+#             */
-/*   Updated: 2023/09/07 08:26:49 by sametyilmaz      ###   ########.fr       */
+/*   Created: 2023/09/07 13:15:38 by sametyilmaz       #+#    #+#             */
+/*   Updated: 2023/09/07 14:22:44 by sametyilmaz      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <unistd.h>
 
-unsigned int	ft_strlcpy(char *dest, char *src, unsigned int size)
+int	ft_atoi(char *str)
 {
-	unsigned int	i;
-	unsigned int	len;
+	int	minus;
+	int	i;
+	int	num;
 
+	minus = 1;
 	i = 0;
-	len = 0;
-	while (src[len] != '\0')
-		len++;
-	if (size < 1)
-		return (len);
-	while (src[i] != '\0' && i < size - 1)
+	num = 0;
+	while (str[i] == ' ' || str[i] == '\n' || str[i] == '\v'
+		|| str[i] == '\t' || str[i] == '\r' || str[i] == '\f')
+		i++;
+	while (str[i] == 45 || str[i] == 43)
 	{
-		dest[i] = src[i];
+		if (str[i] == 45)
+			minus *= -1;
 		i++;
 	}
-	dest[i] = '\0';
-	return (len);
+	while (str[i] >= '0' && str[i] <= '9')
+	{
+		num = (num * 10) + (str[i] - '0');
+		i++;
+	}
+	num *= minus;
+	return (num);
 }

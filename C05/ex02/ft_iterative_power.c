@@ -1,33 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlcpy.c                                       :+:      :+:    :+:   */
+/*   ft_iterative_power.c                               :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: sametyilmaz <sametyilmaz@student.42.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/09/05 18:39:33 by sametyilmaz       #+#    #+#             */
-/*   Updated: 2023/09/07 08:26:49 by sametyilmaz      ###   ########.fr       */
+/*   Created: 2023/09/07 14:40:32 by sametyilmaz       #+#    #+#             */
+/*   Updated: 2023/09/07 16:04:48 by sametyilmaz      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <unistd.h>
 
-unsigned int	ft_strlcpy(char *dest, char *src, unsigned int size)
+int	ft_iterative_power(int nb, int power)
 {
-	unsigned int	i;
-	unsigned int	len;
+	int	base;
 
-	i = 0;
-	len = 0;
-	while (src[len] != '\0')
-		len++;
-	if (size < 1)
-		return (len);
-	while (src[i] != '\0' && i < size - 1)
+	base = nb;
+	if (power < 0)
+		return (0);
+	if (nb == 0 && power == 0)
+		return (1);
+	while (power > 1)
 	{
-		dest[i] = src[i];
-		i++;
+		nb *= base;
+		power--;
 	}
-	dest[i] = '\0';
-	return (len);
+	return (nb);
 }

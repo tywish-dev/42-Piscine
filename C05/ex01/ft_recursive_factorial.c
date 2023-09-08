@@ -1,33 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlcpy.c                                       :+:      :+:    :+:   */
+/*   ft_recursive_factorial.c                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: sametyilmaz <sametyilmaz@student.42.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/09/05 18:39:33 by sametyilmaz       #+#    #+#             */
-/*   Updated: 2023/09/07 08:26:49 by sametyilmaz      ###   ########.fr       */
+/*   Created: 2023/09/07 14:24:08 by sametyilmaz       #+#    #+#             */
+/*   Updated: 2023/09/07 16:04:32 by sametyilmaz      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <unistd.h>
+#include <stdio.h>
 
-unsigned int	ft_strlcpy(char *dest, char *src, unsigned int size)
+int	ft_recursive_factorial(int nb)
 {
-	unsigned int	i;
-	unsigned int	len;
-
-	i = 0;
-	len = 0;
-	while (src[len] != '\0')
-		len++;
-	if (size < 1)
-		return (len);
-	while (src[i] != '\0' && i < size - 1)
-	{
-		dest[i] = src[i];
-		i++;
-	}
-	dest[i] = '\0';
-	return (len);
+	if (nb > 0)
+		return (nb * ft_recursive_factorial(nb - 1));
+	else if (nb == 0)
+		return (1);
+	return (0);
 }
