@@ -6,7 +6,7 @@
 /*   By: sametyilmaz <sametyilmaz@student.42.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/10 23:45:19 by sametyilmaz       #+#    #+#             */
-/*   Updated: 2023/09/10 23:48:16 by sametyilmaz      ###   ########.fr       */
+/*   Updated: 2023/09/19 01:17:59 by sametyilmaz      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ int	main(int argc, char **argv)
 {
 	int	i;
 
-	i = argc;
+	i = argc - 1;
 	while (i > 0)
 	{
 		while (*argv[i])
