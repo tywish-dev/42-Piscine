@@ -6,7 +6,7 @@
 /*   By: sametyilmaz <sametyilmaz@student.42.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/20 00:58:44 by sametyilmaz       #+#    #+#             */
-/*   Updated: 2023/09/20 01:10:42 by sametyilmaz      ###   ########.fr       */
+/*   Updated: 2023/09/21 19:46:58 by sametyilmaz      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,6 +59,7 @@ struct s_stock_str	*ft_strs_to_tab(int argc, char **argv)
 		i++;
 	}
 	array[i].size = 0;
+	array[i].str = 0;
 	array[i].copy = 0;
 	return (array);
 }

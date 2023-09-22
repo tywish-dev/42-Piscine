@@ -6,7 +6,7 @@
 /*   By: sametyilmaz <sametyilmaz@student.42.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/19 15:20:53 by sametyilmaz       #+#    #+#             */
-/*   Updated: 2023/09/20 15:24:27 by sametyilmaz      ###   ########.fr       */
+/*   Updated: 2023/09/21 19:37:30 by sametyilmaz      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,16 +15,12 @@
 
 # include <unistd.h>
 
-typedef enum a_bool
-{
-	false = 0,
-	true = 1
-}		t_bool;
+typedef int t_bool;
 
 # define EVEN(number) (number % 2 == 0)
 
-# define TRUE	true
-# define FALSE	false
+# define TRUE	1
+# define FALSE	0
 
 # define SUCCESS	0
 
